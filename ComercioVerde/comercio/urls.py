@@ -1,14 +1,17 @@
 from django.contrib import admin
 from django.urls import path
-from django.urls import path,include
+from comercio.views import *
 from django.conf import settings
 from django.conf.urls.static import static
-from comercio.views import pagina
+
 
 urlpatterns = [
-    path('principal/', admin.site.urls),
-    path('fresco/',include('comercio.urls')),
-    path('',pagina)
+    path('',vistacomerciox),
+    path('productos/',vistaproductos),
+    path('alimentos/',vistaalimentos),
+    path('artesanias/',vistaartesanias),
+    path('ofertas/',oferton)
+
 ]
 
 if settings.DEBUG:
