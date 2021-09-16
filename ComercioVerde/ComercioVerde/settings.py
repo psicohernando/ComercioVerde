@@ -19,8 +19,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'comercio',
+<<<<<<< HEAD
     'rest_framework',
     'rest_framework.authtoken'
+=======
+    'Checkout'
+>>>>>>> 09000cce4ff81a7d9a4bd6d28a0c55388595946b
 ]
 
 MIDDLEWARE = [
