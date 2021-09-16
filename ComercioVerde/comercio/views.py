@@ -1,12 +1,15 @@
+from comercio.models import Productos_Organicos
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.utils import timezone
 
 # Create your views here.
 def vistacomerciox(request):
-    return HttpResponse('Bienvenido a fresco. El lugar más fresco para la canasta familiar')
+    return render(request,'comercio/inicio.html')
 
 def vistaproductos(request):
-    return HttpResponse('Productos fresco: ¿Qué desea llevar?')
+    product = Productos_Organicos.objects.all()
+    return render(request, 'comercio/productos.html', {'product:': product})
 
 def vistaalimentos(request):
     return HttpResponse('Alimentos fresco: ¿Cómo te quieres alimentar?')
