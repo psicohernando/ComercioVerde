@@ -5,7 +5,7 @@ from Productos.models import *
 class Serialpersonal(serializers.ModelSerializer):
     class Meta:
         model = personal
-        fields = '__all__'
+        fields = ['Nombre','Precio','Descripcion','Foto','numpersonal']
 
 class Serialhogar(serializers.ModelSerializer):
     class Meta:

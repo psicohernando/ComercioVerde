@@ -13,6 +13,9 @@ urlpatterns = [
     path('Artesanal/',include('Artesanal.urls')),
     path('Productos/',include('Productos.urls')),
     path('Compras/',include('Ventas.urls')),
+    path('productosapi/',include('Productos.urls')),
+    path('alimentosapi/',include('Alimentos.urls')),
+    path('artesanalapi/',include('Artesanal.urls')),
 
 ]
 

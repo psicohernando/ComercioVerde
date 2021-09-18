@@ -16,6 +16,11 @@ class personal(models.Model):
     def __str__(self):
         return self.Nombre
 
+    @property
+    def numpersonal(self):
+        perso = personal.objects.all()
+        return len(perso)
+
 class hogar(models.Model):
     Nombre=models.CharField(max_length=100, null=True, blank=True)
     Precio=models.FloatField(max_length=7,null=True,blank=True)

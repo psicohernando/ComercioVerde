@@ -3,20 +3,20 @@ from django.urls import path,include
 from Alimentos.views import *
 from django.conf import settings
 from django.conf.urls.static import static
-
 from rest_framework.routers import DefaultRouter
 
-##router = DefaultRouter()
-##outer.register('verduras',pagina)
+
+router = DefaultRouter()
+router.register('alimento',apialimento)
+router.register('verduras',apiverduras)
+router.register('frutas',apifrutas)
+router.register('vegano',apivegano)
+router.register('postres',apipostres)
+
 
 urlpatterns = [
     path('',pagina),
-    path('alimento/',pagina),
-    path('frutas/',pagina),
-    path('verduras/',pagina),
-    path('postres/',pagina),
-    path('vegano/',pagina),
-    ##path('api/',include(router.urls)),
+    path('crud/',include(router.urls))
 ]
 
 if settings.DEBUG:
