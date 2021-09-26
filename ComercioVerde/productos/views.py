@@ -11,12 +11,4 @@ def pagina(request):
 
 class apipersonal (viewsets.ModelViewSet):
     serializer_class = Serialpersonal
-    queryset = personal.objects.all()
-
-class apihogar (viewsets.ModelViewSet):
-    serializer_class = Serialhogar
-    queryset = hogar.objects.all()
-
-class apisalud (viewsets.ModelViewSet):
-    serializer_class = Serialsaludybelleza
-    queryset = saludybelleza.objects.all()
+    queryset = Productos.objects.all()

@@ -7,9 +7,7 @@ from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
 router.register('artesania',apiartesanias)
-router.register('ropa',apiropa)
-router.register('otros',apiotros)
-
+router.register('comentarios',apicomentarios)
 
 urlpatterns = [
     path('',pagina),

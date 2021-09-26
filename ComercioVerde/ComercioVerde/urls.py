@@ -9,14 +9,10 @@ urlpatterns = [
     path('principal/', admin.site.urls),
     path('fresco/',include('comercio.urls')),
     path('',vistacomerciox),
-    path('Alimentos/',include('Alimentos.urls')),
-    path('Artesanal/',include('Artesanal.urls')),
-    path('Productos/',include('Productos.urls')),
-    path('Compras/',include('Ventas.urls')),
     path('productosapi/',include('Productos.urls')),
-    path('alimentosapi/',include('Alimentos.urls')),
     path('artesanalapi/',include('Artesanal.urls')),
-
+    path('alimentosapi/',include('Alimento.urls')),
+    path('usuarios/api/', include('Usuarios.urls')),
 ]
 
 if settings.DEBUG:

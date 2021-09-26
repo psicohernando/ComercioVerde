@@ -8,8 +8,7 @@ from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
 router.register('personal',apipersonal)
-router.register('hogar',apihogar)
-router.register('salud',apisalud)
+
 
 
 urlpatterns = [

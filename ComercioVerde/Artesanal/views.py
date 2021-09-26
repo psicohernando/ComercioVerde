@@ -11,12 +11,8 @@ def pagina(request):
 
 class apiartesanias (viewsets.ModelViewSet):
     serializer_class = Serialartesanias
-    queryset = Artesanias.objects.all()
+    queryset = Productosartesanal.objects.all()
 
-class apiropa (viewsets.ModelViewSet):
-    serializer_class = Serialropa
-    queryset = Ropa.objects.all()
-
-class apiotros (viewsets.ModelViewSet):
-    serializer_class = Serialotros
-    queryset = Otros.objects.all()
+class apicomentarios (viewsets.ModelViewSet):
+    serializer_class = Serialcomentario
+    queryset = Comentarios.objects.all()

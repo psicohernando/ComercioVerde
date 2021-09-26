@@ -4,15 +4,5 @@ from Productos.models import *
 
 class Serialpersonal(serializers.ModelSerializer):
     class Meta:
-        model = personal
+        model = Productos
         fields = ['Nombre','Precio','Descripcion','Foto','numpersonal']
-
-class Serialhogar(serializers.ModelSerializer):
-    class Meta:
-        model = hogar
-        fields = '__all__'
-
-class Serialsaludybelleza(serializers.ModelSerializer):
-    class Meta:
-        model = saludybelleza
-        fields = '__all__'
