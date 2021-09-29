@@ -1,15 +1,17 @@
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,include
 from Artesanal.views import *
 from django.conf import settings
 from django.conf.urls.static import static
+from rest_framework.routers import DefaultRouter
 
+router = DefaultRouter()
+router.register('artesania',apiartesanias)
+router.register('comentarios',apicomentarios)
 
 urlpatterns = [
     path('',pagina),
-    path('artesania/',pagina),
-    path('ropa/',pagina),
-    path('otros/',pagina),
+    path('crud/',include(router.urls))
 ]
 
 if settings.DEBUG:

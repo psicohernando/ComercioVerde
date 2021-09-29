@@ -21,11 +21,19 @@ INSTALLED_APPS = [
     'comercio',
     'rest_framework',
     'rest_framework.authtoken',
-    'Alimentos',
     'Artesanal',
     'Productos',
-    'Ventas'
+    'Alimento',
+    'Usuarios',
+    'Checkout'
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ]
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -62,14 +70,6 @@ DATABASES = {
     }
 }
 
-
-
-REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.BasicAuthentication',
-        'rest_framework.authentication.SessionAuthentication',
-    ]
-}
 
 
 # Password validation
