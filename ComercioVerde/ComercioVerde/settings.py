@@ -24,7 +24,8 @@ INSTALLED_APPS = [
     'Artesanal',
     'Productos',
     'Alimento',
-    'Usuarios'
+    'Usuarios',
+    'Checkout'
 ]
 
 REST_FRAMEWORK = {
