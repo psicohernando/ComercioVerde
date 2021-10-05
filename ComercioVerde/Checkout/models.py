@@ -1,7 +1,8 @@
 from django.db import models
 from django.contrib.auth import get_user_model
-
+from Artesanal.models import Productosartesanal
 from Productos.models import Productos
+from Alimento.models import Alimentos
 
 class CarritoCompras(models.Model):
     usuario = models.ForeignKey(get_user_model(), on_delete=models.SET_NULL, null=True)
@@ -20,14 +21,16 @@ class CarritoCompras(models.Model):
 
 class Articulo(models.Model):
     carrito = models.ForeignKey(CarritoCompras, on_delete=models.CASCADE)
-    producto = models.ForeignKey(Productos, on_delete=models.SET_NULL, null=True)
+    producto = models.ForeignKey(Productos, on_delete=models.SET_NULL, null=True,blank=True)
+    arte = models.ForeignKey(Productosartesanal, on_delete=models.SET_NULL, null=True,blank=True)
+    alimento = models.ForeignKey(Alimentos, on_delete=models.SET_NULL, null=True,blank=True)
     cantidad = models.IntegerField()
 
     def __str__(self):
-        return self.carrito.__str__() + " / " + self.producto.nombre
+        return self.arte.Nombre
     
     def subtotal(self):
-        return self.producto.precio*self.cantidad
+        return self.producto.Precio*self.cantidad + self.arte.Precio*self.cantidad + self.alimento.Precio*self.cantidad
 
 class InfoEnvio(models.Model):
     nombre = models.CharField(max_length=200)
