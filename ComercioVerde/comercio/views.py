@@ -5,7 +5,7 @@ from django.utils import timezone
 
 # Create your views here.
 def vistacomerciox(request):
-    return render(request,'comercio/inicio.html')
+    return render(request,'comercio/index.html')
 
 def vistaproductos(request):
     product = Productos_Organicos.objects.all()

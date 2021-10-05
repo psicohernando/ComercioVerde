@@ -13,7 +13,9 @@ urlpatterns = [
     path('artesanalapi/',include('Artesanal.urls')),
     path('alimentosapi/',include('Alimento.urls')),
     path('usuarios/api/', include('Usuarios.urls')),
+    path('check/api/', include('Checkout.urls')),
 ]
+
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 
