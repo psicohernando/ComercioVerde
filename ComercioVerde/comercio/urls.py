@@ -6,8 +6,7 @@ from django.conf.urls.static import static
 
 
 urlpatterns = [
-    path('',vistacomerciox),
-    path('ofertas/',oferton)
+    path('', LandingPage.as_view())
 
 ]
 

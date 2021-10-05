@@ -21,13 +21,13 @@ class CarritoCompras(models.Model):
 
 class Articulo(models.Model):
     carrito = models.ForeignKey(CarritoCompras, on_delete=models.CASCADE)
-    producto = models.ForeignKey(Productos, on_delete=models.SET_NULL, null=True)
-    arte = models.ForeignKey(Productosartesanal, on_delete=models.SET_NULL, null=True)
-    alimento = models.ForeignKey(Alimentos, on_delete=models.SET_NULL, null=True)
+    producto = models.ForeignKey(Productos, on_delete=models.SET_NULL, null=True,blank=True)
+    arte = models.ForeignKey(Productosartesanal, on_delete=models.SET_NULL, null=True,blank=True)
+    alimento = models.ForeignKey(Alimentos, on_delete=models.SET_NULL, null=True,blank=True)
     cantidad = models.IntegerField()
 
     def __str__(self):
-        return self.carrito.__str__() + " / " + self.producto.Nombre + " / " + self.alimento.Nombre + " / " + self.arte.Nombre 
+        return self.arte.Nombre
     
     def subtotal(self):
         return self.producto.Precio*self.cantidad + self.arte.Precio*self.cantidad + self.alimento.Precio*self.cantidad
