@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Comercio Verde - Belleza y Salud</title>
+	<title>Comercio Verde - Artesanias</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 	<!-- Fonts -->
@@ -219,8 +219,8 @@
 		      	<ul class="nav navbar-nav nav-main">
 		        	<li> <a href="/">Inicio</a></li>
 					<li><a href="alimentos">Alimentos</a></li>
-					<li><a href="artesanias">Artesanías</a></li>
-					<li class="active"><a href="#">Salud y Belleza</a></li>
+					<li class="active"><a href="#">Artesanías</a></li>
+					<li><a href="productos">Salud y Belleza</a></li>
 					<li>
 						<a data-toggle="modal" data-target="#myModal2" href="#">
 						¿Quienes sómos?
@@ -253,7 +253,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-4">
-					<h1>Salud y belleza</h1>
+					<h1>Artesanías</h1>
 					<p>Comercio Verde</p>
 				</div>	<!-- End of /.col-md-4 -->
 				<div class="col-md-8 hidden-xs">
@@ -279,16 +279,18 @@
 						<h2>NEW PRODUCTS</h2>
 					</div>	<!-- End of /.Products-heading -->
 					<div class="row">
-						{% for pro in productos %}
+						{% for arte in artesa %}
 							<div class="col-sm-6 col-md-4">
 								<div class="thumbnail">
 									<a class="catagotie-head" href="blog-single.html">
-										<img style="/*width:300px; height:300px*/" src="{{pro.Foto}}" alt="...">
-										<h3>{{pro.Nombre}}</h3>
+										<img style="/*width:300px; height:300px*/" src="{{arte.Foto}}" alt="...">
+										<h3>{{arte.Nombre}}</h3>
 									</a>
 									<div class="caption">
-										<p>{{pro.Descripcion}}</p>
-                                                                                <p>Precio: ${{pro.Precio}}</p>
+										<p>{{arte.Descripcion}}</p>
+                                                                                <p>{{arte.Lugarelaboracion}}</p>
+
+										<p>Precio: ${{arte.Precio}}</p>
 										<p>
 											<a href="blog-single.html" class="btn btn-default btn-transparent" role="button">
 												<span>Check Items</span>
@@ -299,8 +301,6 @@
 							</div>	<!-- End of /.col-sm-6 col-md-4 -->
 						{% endfor %}
 					</div>	<!-- End of /.row -->
-
-
 
 
 
@@ -399,14 +399,6 @@
 			</div>	<!-- End of /.row -->
 		</div>	<!-- End of /.container -->
 	</section>	<!-- End of Section -->
-
-
-	
-
-
-	
-
-
 
 
 <!-- FOOTER Start
